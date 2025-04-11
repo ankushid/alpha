@@ -1,3 +1,4 @@
+import os
 import gym
 import numpy as np
 from gym import spaces
@@ -11,6 +12,70 @@ tf = try_import_tf()
 import rlcard
 from rlcard.utils import set_seed
 import random
+
+import os
+from datetime import datetime
+
+def log_llm_prompt(game_state_dict, player_id, action_taken):
+    prompt_dir = os.path.expanduser("~/AlphaNLHoldem/llm_logs")
+    os.makedirs(prompt_dir, exist_ok=True)
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    filename = f"{prompt_dir}/llm_prompt_{timestamp}.txt"
+
+    prompt = f"""
+Game State:
+- Round: {game_state_dict['round']}
+- Community Cards: {game_state_dict['community']}
+- Your Hand: {game_state_dict['hand']}
+- Pot Size: {game_state_dict['pot']}
+- Stack Sizes: You: {game_state_dict['player_stack']} | Opponent: {game_state_dict['opp_stack']}
+- Opponent Actions: {game_state_dict['opp_actions']}
+- Your Action: {action_taken}
+
+What should the player do next?
+"""
+
+    with open(filename, "w") as f:
+        f.write(prompt)
+    return filename
+
+def get_llm_suggestion(prompt_path):
+    response_path = prompt_path.replace("_prompt_", "_response_")
+    if not os.path.exists(response_path):
+        return None, None, None
+    with open(response_path, "r") as f:
+        lines = f.readlines()
+        action, confidence, reason = None, None, None
+        for line in lines:
+            if line.lower().startswith("suggested action:"):
+                action = line.split(":")[1].strip().lower()
+            elif line.lower().startswith("confidence:"):
+                confidence = line.split(":")[1].strip().lower()
+            elif line.lower().startswith("reason:"):
+                reason = line.split(":", 1)[1].strip()
+    return action, confidence, reason
+
+def auto_generate_llm_response(prompt_path):
+    response_path = prompt_path.replace("_prompt_", "_response_")
+    print(f"[DEBUG] Attempting to generate response for {response_path}")
+
+    if os.path.exists(response_path):
+        print(f"[DEBUG] Response already exists. Skipping: {response_path}")
+        return  # Don't overwrite
+
+    import random
+    action = random.choice(["fold", "call", "raise", "check", "bet"])
+    confidence = random.choice(["low", "medium", "high"])
+    reason = f"Mock reason: LLM chose {action} with {confidence} confidence."
+
+    print(f"[DEBUG] Writing mock response: {action}, {confidence}, {reason}")
+
+    with open(response_path, "w") as f:
+        f.write(f"Suggested Action: {action}\n")
+        f.write(f"Confidence: {confidence}\n")
+        f.write(f"Reason: {reason}\n")
+
 
 color2ind = dict(zip("CDHS",[0,1,2,3]))
 rank2ind = dict(zip("23456789TJQKA",[0,1,2,3,4,5,6,7,8,9,10,11,12]))
@@ -124,6 +189,40 @@ class NlHoldemEnvWrapper():
         self._log_action(action)
         obs = self.env.step(action)
         self.last_obs = obs
+
+        if self.env.get_player_id() == 0 and not self.env.game.is_over():
+            raw_obs = self.last_obs[0]["raw_obs"]
+            game_state = {
+                "round": raw_obs["stage"].name,
+                "community": raw_obs["public_cards"],
+                "hand": raw_obs["hand"],
+                "pot": raw_obs["pot"],
+                "player_stack": raw_obs["stakes"][0],
+                "opp_stack": raw_obs["stakes"][1],
+                "opp_actions": [entry for round_hist in self.history for entry in round_hist if entry[0] == 1],
+            }
+            prompt_path = log_llm_prompt(game_state, player_id=0, action_taken=action)
+            auto_generate_llm_response(prompt_path)
+            llm_action, llm_conf, llm_reason = get_llm_suggestion(prompt_path)
+
+            #prompt_path = log_llm_prompt(game_state, player_id=0, action_taken=action)
+            # prompt_dir = os.path.expanduser("~/AlphaNLHoldem/llm_logs")
+            # prompt_files = sorted([f for f in os.listdir(prompt_dir) if f.startswith("llm_prompt_")], reverse=True)
+            # prompt_path = os.path.join(prompt_dir, prompt_files[0])  latest prompt file
+            # auto_generate_llm_response(prompt_path)
+            # llm_action, llm_conf, llm_reason = get_llm_suggestion(prompt_path)
+
+            with open("log/llm_comparison_log.txt", "a") as f:
+                f.write(f"RL Action: {action}, LLM Action: {llm_action}, Confidence: {llm_conf}, Agreement: {action == llm_action}\n")
+
+            if llm_action and llm_conf == "high" and llm_action != str(action):
+                print(f"[LLM Override] Replacing RL action {action} with LLM suggestion: {llm_action}")
+                try:
+                    action = int(llm_action)
+                except:
+                    print(f"[Override Error] Could not convert LLM action '{llm_action}' to integer.")
+
+
         obs = self._get_observation(obs)
         
         done = False

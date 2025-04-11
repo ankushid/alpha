@@ -219,5 +219,5 @@ tune.run(
     local_dir='log/',
     #resources_per_trial=ImpalaTrainer.default_resource_request,
     #resources_per_trial=ImpalaTrainer.default_resource_request(tune_config),
-    resources_per_trial={'cpu':1,'gpu':1},
+    resources_per_trial={'cpu':1},
 )
