@@ -1,0 +1,23 @@
+{
+  "callbacks": {
+    "on_episode_end": "<function on_episode_end at 0x76895c96c170>",
+    "on_episode_start": "<function on_episode_start at 0x76895c96c320>",
+    "on_episode_step": "<function on_episode_step at 0x76895c96c440>",
+    "on_train_result": "<function on_train_result at 0x76895c96c4d0>"
+  },
+  "env": "NlHoldemEnvWithOpponent",
+  "env_config": {
+    "custom_options": {
+      "rwd_ratio": 1.0
+    }
+  },
+  "max_sample_requests_in_flight_per_worker": 1,
+  "model": {
+    "custom_model": "NlHoldemNet",
+    "max_seq_len": 6
+  },
+  "num_data_loader_buffers": 4,
+  "num_workers": 1,
+  "rollout_fragment_length": 200,
+  "train_batch_size": 2000
+}

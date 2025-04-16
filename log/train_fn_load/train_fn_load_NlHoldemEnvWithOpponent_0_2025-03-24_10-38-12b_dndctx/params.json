@@ -1,0 +1,61 @@
+{
+  "callbacks": {
+    "on_episode_end": "<function on_episode_end at 0x72b3c595db00>",
+    "on_episode_start": "<function on_episode_start at 0x72b3c595dc20>",
+    "on_episode_step": "<function on_episode_step at 0x72b3c59575f0>",
+    "on_train_result": "<function on_train_result at 0x72b3c5957a70>"
+  },
+  "entropy_coeff": 0.1,
+  "env": "NlHoldemEnvWithOpponent",
+  "env_config": {
+    "custom_options": {
+      "conut_bb_rather_than_winrate": 2,
+      "cut": [
+        [
+          0,
+          12
+        ],
+        [
+          13,
+          25
+        ],
+        [
+          26,
+          38
+        ],
+        [
+          39,
+          51
+        ],
+        [
+          52,
+          53
+        ],
+        [
+          53,
+          54
+        ]
+      ],
+      "epsilon": 0.15,
+      "history_len": 20,
+      "tracker_n": 1000,
+      "use_cardnum": true,
+      "use_history": true,
+      "weight": "default"
+    }
+  },
+  "gamma": 1,
+  "lr": 0.0003,
+  "max_sample_requests_in_flight_per_worker": 1,
+  "model": {
+    "custom_model": "NlHoldemNet",
+    "custom_options": {},
+    "max_seq_len": 20
+  },
+  "num_data_loader_buffers": 4,
+  "num_envs_per_worker": 1,
+  "num_gpus": 1,
+  "num_workers": 89,
+  "sample_batch_size": 50,
+  "train_batch_size": 1000
+}
