@@ -4,7 +4,7 @@ import time
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="sk-544792c2c7de4a128e035fffed01daf9",  # ← your DeepSeek API key
+    api_key="sk-544792c2c7de4a128e035fffed01daf9",
     base_url="https://api.deepseek.com/v1"
 )
 
@@ -38,14 +38,15 @@ def main():
         response_file = f"llm_response_deepseek_{int(time.time() * 1000)}_{prompt_id}.txt"
         response_path = os.path.join(log_dir, response_file)
 
-        # Skip if a deepseek response already exists for this prompt
-        if any(f.endswith(f"{prompt_id}.txt") for f in os.listdir(log_dir) if "llm_response_deepseek" in f):
-            continue
+        # if any(f.endswith(f"{prompt_id}.txt") for f in os.listdir(log_dir) if "llm_response_deepseek" in f):
+           # continue
 
         with open(os.path.join(log_dir, prompt_file), "r") as f:
             prompt_text = f.read()
 
         action, confidence, reason = get_llm_response(prompt_text)
+
+        print(f"[!] Overwriting DeepSeek response for: {prompt_file}")
 
         with open(response_path, "w") as f:
             f.write(f"Original Prompt File: {prompt_file}\n")
@@ -54,7 +55,7 @@ def main():
             f.write(f"Reason: {reason}\n")
 
         print(f"[✓] Saved response to {response_path}")
-        time.sleep(0.5)  # Optional delay to avoid rapid API hits
+        time.sleep(0.5)
 
 if __name__ == "__main__":
     main()
