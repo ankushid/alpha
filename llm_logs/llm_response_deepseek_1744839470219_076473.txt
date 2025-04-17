@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_076473.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (SA, C3) has very little potential on this flop (HT, S7, H6) and the opponent's range is likely stronger given their actions. Folding is the best option to preserve your stack.

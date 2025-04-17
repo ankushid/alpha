@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_163178.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (C9, D2) is very weak and not worth playing, especially against an opponent's range that includes raising. Folding is the best option to preserve your stack.

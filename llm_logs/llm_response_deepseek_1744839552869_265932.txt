@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_265932.txt
+Suggested Action: check
+Confidence: medium
+Reason: You have a weak hand with no strong draws and the opponent's actions suggest a wide range. Checking allows you to see the next card without committing more chips.

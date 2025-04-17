@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_428526.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (D9, SK) is weak and not worth playing in this situation, especially with the opponent's actions suggesting strength.

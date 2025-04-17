@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_388376.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (C8, DT) is weak and not worth playing in this situation, especially against an opponent who has shown aggression. Folding is the best option to preserve your stack.

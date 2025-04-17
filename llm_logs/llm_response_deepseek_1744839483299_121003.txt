@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_121003.txt
+Suggested Action: check
+Confidence: medium
+Reason: You have a pair of 7s with a weak kicker and a backdoor flush draw, but the opponent's actions suggest they might have a stronger hand. Checking allows you to see the next card without committing more chips.

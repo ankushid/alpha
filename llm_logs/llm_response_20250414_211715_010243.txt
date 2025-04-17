@@ -1,0 +1,3 @@
+Suggested Action: check
+Confidence: medium
+Reason: Mock reason: LLM chose check with medium confidence.

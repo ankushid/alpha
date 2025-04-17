@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_196614.txt
+Suggested Action: raise
+Confidence: medium
+Reason: You have a strong starting hand with SA (Ace of Spades) and SJ (Jack of Spades), which has good potential for high pairs, straights, and flushes. The opponent's actions suggest they are not overly aggressive, so a raise can help you take control of the pot and potentially force weaker hands to fold.

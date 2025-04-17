@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_217819.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (C4, D3) is very weak and unlikely to improve significantly postflop. The opponent's actions suggest aggression, and continuing with such a weak hand is not profitable.

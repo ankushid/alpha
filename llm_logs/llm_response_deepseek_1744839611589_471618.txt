@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_471618.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand has very little potential to improve and the flop doesn't connect with your cards. The opponent's range likely includes stronger hands.

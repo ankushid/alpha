@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_423930.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (D9, SK) is weak and not worth playing in this position, especially against an opponent's range that likely includes stronger hands. Folding is the best option to preserve your stack.

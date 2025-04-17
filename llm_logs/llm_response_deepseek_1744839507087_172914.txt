@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_172914.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand has very little equity and the opponent's actions suggest strength. Continuing would be a mistake.

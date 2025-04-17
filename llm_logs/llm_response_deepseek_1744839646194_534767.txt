@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_534767.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (C7, D4) is very weak and unlikely to improve significantly post-flop. The opponent's actions suggest a wide range, but folding is the safest play with such a poor starting hand.

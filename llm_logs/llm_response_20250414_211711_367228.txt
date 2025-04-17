@@ -1,0 +1,3 @@
+Suggested Action: bet
+Confidence: medium
+Reason: Mock reason: LLM chose bet with medium confidence.

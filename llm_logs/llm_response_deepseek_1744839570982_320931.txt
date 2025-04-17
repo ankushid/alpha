@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_320931.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (D4, DK) is weak preflop and the opponent's range is likely strong given their actions. Folding is the best play to conserve chips.

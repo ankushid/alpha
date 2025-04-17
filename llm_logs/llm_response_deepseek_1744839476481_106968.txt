@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_106968.txt
+Suggested Action: bet
+Confidence: high
+Reason: You have a flush draw with the King of clubs and can apply pressure on the opponent with a bet. The flop is coordinated, so a bet can help define the opponent's hand and potentially take down the pot now.

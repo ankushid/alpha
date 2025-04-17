@@ -1,0 +1,11 @@
+
+Game State:
+- Round: RIVER
+- Community Cards: ['DA', 'S6', 'D6', 'DJ', 'S4']
+- Your Hand: ['HJ', 'ST']
+- Pot Size: 160
+- Stack Sizes: You: 20 | Opponent: 20
+- Opponent Actions: [[1, 3, [0, 1, 2, 3, 4]], [1, 1, [0, 1, 2, 3, 4]], [1, 3, [0, 1, 3, 4]]]
+- Your Action: 1
+
+What should the player do next?

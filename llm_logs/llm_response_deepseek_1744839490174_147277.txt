@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_147277.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (D4, DQ) is weak and not worth calling or raising preflop, especially against an opponent's range that likely includes stronger hands. Folding is the best option to preserve your stack.

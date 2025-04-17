@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_506222.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand has very little chance of improving and the opponent's consistent betting suggests strength.

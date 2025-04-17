@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_205816.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (SA, SJ) has little potential on this flop (D5, H3, C7) with no draws or pairs, and the opponent's actions suggest strength. With only 22 chips left, it's better to conserve them for a better spot.

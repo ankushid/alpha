@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_270403.txt
+Suggested Action: check
+Confidence: medium
+Reason: Your hand has some potential with a backdoor flush draw and overcards, but it's not strong enough to bet or raise. Checking allows you to see a free turn card and reassess.

@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_233820.txt
+Suggested Action: fold
+Confidence: high
+Reason: The opponent has already gone all-in with a stack of 0, indicating they have no chips left to play. Your hand ['CT', 'HT'] is weak preflop, and there's no value in calling or raising against an opponent with no remaining stack. Folding is the only logical action.

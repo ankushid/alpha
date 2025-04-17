@@ -1,0 +1,11 @@
+
+Game State:
+- Round: PREFLOP
+- Community Cards: []
+- Your Hand: ['H8', 'S9']
+- Pot Size: 26
+- Stack Sizes: You: 92 | Opponent: 82
+- Opponent Actions: [[1, 2, [0, 1, 2, 3, 4]], [1, 3, [0, 1, 2, 3, 4]]]
+- Your Action: 3
+
+What should the player do next?

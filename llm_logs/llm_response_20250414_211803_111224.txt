@@ -1,0 +1,3 @@
+Suggested Action: call
+Confidence: medium
+Reason: Mock reason: LLM chose call with medium confidence.

@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_167317.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand has very little potential to improve and the opponent's range is likely stronger given their actions.

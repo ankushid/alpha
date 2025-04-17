@@ -1,0 +1,11 @@
+
+Game State:
+- Round: FLOP
+- Community Cards: ['HA', 'H7', 'DQ']
+- Your Hand: ['S4', 'CQ']
+- Pot Size: 52
+- Stack Sizes: You: 74 | Opponent: 74
+- Opponent Actions: [[1, 3, [0, 1, 2, 3, 4]], [1, 3, [0, 1, 2, 3, 4]]]
+- Your Action: 1
+
+What should the player do next?

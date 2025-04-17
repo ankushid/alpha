@@ -1,0 +1,4 @@
+Original Prompt File: llm_prompt_20250414_211540_288907.txt
+Suggested Action: fold
+Confidence: high
+Reason: Your hand (H2, DA) is very weak preflop and not worth investing more chips, especially with the opponent's aggressive action.

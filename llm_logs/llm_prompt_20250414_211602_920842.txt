@@ -1,0 +1,11 @@
+
+Game State:
+- Round: TURN
+- Community Cards: ['ST', 'HQ', 'D2', 'SK']
+- Your Hand: ['D6', 'H5']
+- Pot Size: 90
+- Stack Sizes: You: 70 | Opponent: 40
+- Opponent Actions: [[1, 3, [0, 1, 2, 3, 4]], [1, 2, [0, 1, 2, 3, 4]], [1, 3, [0, 1, 2, 3, 4]]]
+- Your Action: 3
+
+What should the player do next?
