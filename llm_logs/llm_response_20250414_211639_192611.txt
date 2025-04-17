@@ -1,3 +1,0 @@
-Suggested Action: raise
-Confidence: medium
-Reason: Mock reason: LLM chose raise with medium confidence.

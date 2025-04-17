@@ -1,4 +1,0 @@
-Original Prompt File: llm_prompt_20250414_211540_356002.txt
-Suggested Action: fold
-Confidence: high
-Reason: Your hand (DJ, D7) is weak and not worth playing in this situation, especially with the opponent's aggressive action. Folding is the best choice to preserve your stack.

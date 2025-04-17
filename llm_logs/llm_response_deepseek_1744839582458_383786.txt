@@ -1,4 +1,0 @@
-Original Prompt File: llm_prompt_20250414_211540_383786.txt
-Suggested Action: fold
-Confidence: high
-Reason: Your hand (C8, DT) is weak and the opponent's range is likely strong given their actions. Folding is the best play to conserve chips.

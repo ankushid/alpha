@@ -1,3 +1,0 @@
-Suggested Action: bet
-Confidence: high
-Reason: Mock reason: LLM chose bet with high confidence.

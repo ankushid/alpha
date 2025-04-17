@@ -1,3 +1,0 @@
-Suggested Action: fold
-Confidence: low
-Reason: Mock reason: LLM chose fold with low confidence.

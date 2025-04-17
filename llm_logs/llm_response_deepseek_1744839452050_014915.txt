@@ -1,4 +1,0 @@
-Original Prompt File: llm_prompt_20250414_211540_014915.txt
-Suggested Action: fold
-Confidence: high
-Reason: Your hand (H2, C6) is very weak and unlikely to improve significantly postflop. The opponent's actions suggest they have a stronger range, and continuing with this hand would be -EV.

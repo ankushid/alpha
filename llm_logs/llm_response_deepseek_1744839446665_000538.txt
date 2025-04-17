@@ -1,4 +1,0 @@
-Original Prompt File: llm_prompt_20250414_211540_000538.txt
-Suggested Action: fold
-Confidence: high
-Reason: Your hand is weak with no pair or draw potential, and the opponent's range likely includes better hands given their actions.

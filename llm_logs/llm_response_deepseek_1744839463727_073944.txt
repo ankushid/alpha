@@ -1,4 +1,0 @@
-Original Prompt File: llm_prompt_20250414_211540_073944.txt
-Suggested Action: fold
-Confidence: high
-Reason: Your hand (SA, C3) is weak and not worth calling or raising preflop, especially against an opponent's range that likely includes stronger hands. Folding is the best play to conserve your stack.
