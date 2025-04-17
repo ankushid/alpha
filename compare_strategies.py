@@ -4,6 +4,20 @@ import re
 LOG_DIR = "llm_logs"
 LOG_FILE = "strategy_comparison_log.txt"
 
+with open(LOG_FILE, "w") as log:
+    log.write("Prompt File | LLM Action | RL Action\n")
+    log.write("-" * 40 + "\n")
+
+    for fname in sorted(os.listdir(LOG_DIR)):
+        if not fname.startswith("llm_prompt_"):
+            continue
+
+        print(f"Checking {fname}...")
+
+        prompt_path = os.path.join(LOG_DIR, fname)
+        with open(prompt_path, "r") as f:
+            prompt_text = f.read()
+
 action_map = {
     "0": "fold",
     "1": "call",
@@ -19,51 +33,61 @@ def extract_rl_action(prompt_text):
     return None
 
 def extract_llm_action(response_text):
-    for line in response_text.splitlines():
-        if line.startswith("Suggested Action:"):
-            return line.split(":")[1].strip().lower()
+    match = re.search(r"Suggested Action:\s*(.+)", response_text)
+    if match:
+        return match.group(1).strip().lower()
     return None
 
-with open(LOG_FILE, "w") as log:
-    log.write("Prompt File | RL Action | LLM Action | Match\n")
-    log.write("-" * 40 + "\n")
+def compare_strategies():
+    with open(LOG_FILE, "w") as log:
+        count_total = 0
+        count_match = 0
 
-    match_count = 0
-    total = 0
+        for fname in sorted(os.listdir(LOG_DIR)):
+            if not fname.startswith("llm_prompt_"):
+                continue
 
-    for fname in sorted(os.listdir(LOG_DIR)):
-        print(f"[LOOP] Comparing: {fname}")
-        if not fname.startswith("llm_prompt_"):
-            continue
-        print(f"[✓] Checking prompt: {fname}")
+            prompt_path = os.path.join(LOG_DIR, fname)
+            prompt_id = fname.split("_")[-1].replace(".txt", "")
 
-        prompt_path = os.path.join(LOG_DIR, fname)
-        prompt_text = open(prompt_path, "r").read()
-        print("[DEBUG] Prompt text preview:", prompt_text[:80].replace("\n", " "))
-        rl_action = extract_rl_action(prompt_text)
+            response_file = next(
+                (f for f in os.listdir(LOG_DIR)
+                 if f.startswith("llm_response_deepseek_") and f.endswith(f"{prompt_id}.txt")),
+                None
+            )
 
-        prompt_id = fname.split("_")[-1].replace(".txt", "")
-        llm_file = None
-        for f in os.listdir(LOG_DIR):
-            if f.startswith("llm_response_deepseek_") and f.endswith(f"{prompt_id}.txt"):
-                llm_file = os.path.join(LOG_DIR, f)
-                break
+            if not response_file:
+                continue
 
-        if not llm_file:
-            continue
+            response_path = os.path.join(LOG_DIR, response_file)
 
-        llm_text = open(llm_file, "r").read()
-        llm_action = extract_llm_action(llm_text)
+            with open(prompt_path, "r") as f:
+                prompt_text = f.read()
 
-        if rl_action and llm_action:
+            rl_action = extract_rl_action(prompt_text)
+            if not rl_action:
+                continue
+
+            with open(response_path, "r") as f:
+                response_text = f.read()
+
+            llm_action = extract_llm_action(response_text)
+            if not llm_action:
+                continue
+
             match = rl_action == llm_action
-            if match:
-                match_count += 1
-            total += 1
+            count_total += 1
+            count_match += int(match)
+
             log.write(f"{fname}: RL={rl_action}, LLM={llm_action}, Match={match}\n")
 
-    log.write("\n---\n")
-    log.write(f"Total Comparisons: {total}\n")
-    log.write(f"Matching Decisions: {match_count}\n")
-    if total > 0:
-        log.write(f"Agreement Rate: {round(match_count / total * 100, 2)}%\n")
+        log.write(f"\n---\nTotal Comparisons: {count_total}\n")
+        log.write(f"Matching Decisions: {count_match}\n")
+        if count_total > 0:
+            pct = (count_match / count_total) * 100
+            log.write(f"Agreement Rate: {pct:.2f}%\n")
+
+    print(f"[✓] Strategy comparison complete. Log saved to: {LOG_FILE}")
+
+if __name__ == "__main__":
+    compare_strategies()
