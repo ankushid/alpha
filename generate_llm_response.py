@@ -15,14 +15,26 @@ def get_llm_response(prompt):
         response = client.chat.completions.create(
             model="deepseek-chat",
             messages=[
-                {"role": "system", "content": "You are a poker strategist assistant."},
+                {"role": "system", "content": (
+                   "You are a professional poker assistant. Given a game state, your job is to suggest the best poker action "
+                   "using ONLY this format:\n"
+                   "<action>, <confidence>, <reason>\n"
+                   "Valid actions: fold, call, check, raise, bet.\n"
+                   "Confidence should be: low, medium, or high.\n"
+                   "Do not return anything outside this format.\n"
+                )},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.7,
-            max_tokens=100
+            max_tokens=200
         )
-        reply = response.choices[0].message.content
+        reply = response.choices[0].message.content.strip()
+        print("[LLM RAW OUTPUT]:", reply)
         action, confidence, reason = reply.split(",", 2)
+        action = action.strip().lower()
+        if action not in ["fold", "call", "check", "raise", "bet"]:
+            raise ValueError("Unrecognized action")
+
         return action.strip(), confidence.strip(), reason.strip()
     except Exception as e:
         print("LLM ERROR:", e)
