@@ -1,0 +1,47 @@
+llm_prompt_20250414_211540_000538.txt: RL=call, LLM=fold, Match=False
+llm_prompt_20250414_211540_014915.txt: RL=raise, LLM=fold, Match=False
+llm_prompt_20250414_211540_033995.txt: RL=call, LLM=fold, Match=False
+llm_prompt_20250414_211540_073944.txt: RL=raise, LLM=fold, Match=False
+llm_prompt_20250414_211540_076473.txt: RL=call, LLM=fold, Match=False
+llm_prompt_20250414_211540_106968.txt: RL=call, LLM=bet, Match=False
+llm_prompt_20250414_211540_121003.txt: RL=call, LLM=check, Match=False
+llm_prompt_20250414_211540_147277.txt: RL=check, LLM=fold, Match=False
+llm_prompt_20250414_211540_163178.txt: RL=raise, LLM=fold, Match=False
+llm_prompt_20250414_211540_167317.txt: RL=call, LLM=fold, Match=False
+llm_prompt_20250414_211540_172914.txt: RL=call, LLM=fold, Match=False
+llm_prompt_20250414_211540_191799.txt: RL=check, LLM=raise, Match=False
+llm_prompt_20250414_211540_196614.txt: RL=check, LLM=raise, Match=False
+llm_prompt_20250414_211540_201257.txt: RL=call, LLM=check, Match=False
+llm_prompt_20250414_211540_205816.txt: RL=bet, LLM=bet, Match=True
+llm_prompt_20250414_211540_217819.txt: RL=bet, LLM=fold, Match=False
+llm_prompt_20250414_211540_233820.txt: RL=bet, LLM=bet, Match=True
+llm_prompt_20250414_211540_265932.txt: RL=call, LLM=check, Match=False
+llm_prompt_20250414_211540_270403.txt: RL=check, LLM=fold, Match=False
+llm_prompt_20250414_211540_288907.txt: RL=bet, LLM=fold, Match=False
+llm_prompt_20250414_211540_320931.txt: RL=raise, LLM=fold, Match=False
+llm_prompt_20250414_211540_356002.txt: RL=bet, LLM=fold, Match=False
+llm_prompt_20250414_211540_383786.txt: RL=check, LLM=fold, Match=False
+llm_prompt_20250414_211540_388376.txt: RL=raise, LLM=fold, Match=False
+llm_prompt_20250414_211540_392451.txt: RL=bet, LLM=fold, Match=False
+llm_prompt_20250414_211540_423930.txt: RL=check, LLM=fold, Match=False
+llm_prompt_20250414_211540_428526.txt: RL=check, LLM=fold, Match=False
+llm_prompt_20250414_211540_471618.txt: RL=call, LLM=fold, Match=False
+llm_prompt_20250414_211540_482627.txt: RL=bet, LLM=fold, Match=False
+llm_prompt_20250414_211540_501429.txt: RL=call, LLM=fold, Match=False
+llm_prompt_20250414_211540_506222.txt: RL=call, LLM=fold, Match=False
+llm_prompt_20250414_211540_519497.txt: RL=check, LLM=fold, Match=False
+llm_prompt_20250414_211540_522149.txt: RL=call, LLM=fold, Match=False
+llm_prompt_20250414_211540_534767.txt: RL=raise, LLM=fold, Match=False
+llm_prompt_20250414_211540_568130.txt: RL=call, LLM=check, Match=False
+llm_prompt_20250414_211540_622866.txt: RL=raise, LLM=fold, Match=False
+llm_prompt_20250414_211540_645370.txt: RL=bet, LLM=fold, Match=False
+llm_prompt_20250414_211540_657151.txt: RL=bet, LLM=fold, Match=False
+llm_prompt_20250414_211540_696312.txt: RL=check, LLM=fold, Match=False
+llm_prompt_20250414_211540_700758.txt: RL=bet, LLM=fold, Match=False
+llm_prompt_20250414_211540_711080.txt: RL=bet, LLM=fold, Match=False
+llm_prompt_20250414_211540_726525.txt: RL=check, LLM=fold, Match=False
+
+---
+Total Comparisons: 42
+Matching Decisions: 2
+Agreement Rate: 4.76%
